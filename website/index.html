@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opiskelijaravintolat</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script src="leaflet.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div id="title">
+        <a href="index.html"
+          ><img
+            src="Logo.png"
+            width="150"
+            alt="Opiskelijaravintolat-sivuston logo"
+        /></a>
+      </div>
+      <nav class="options" id="navbar">
+        <a href="index.html">Etusivu</a>
+        <a href="login.html">Kirjaudu sisään</a>
+        <a href="signup.html">Luo käyttäjä</a>
+      </nav>
+    </header>
+    <main>
+      <div id="map"></div>
+      <h3>Ravintola</h3>
+      <div id="restaurant-info-container">
+        <div id="restaurant-info">
+          <p>Valittu ravintola:</p>
+          <p id="restaurant">Sodexo Myllypuro</p>
+        </div>
+        <form>
+          <input type="text" id="name" name="name" value="Hae ravintolaa" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <h3>Viikonpäivä</h3>
+      <nav class="options" id="weekdays">
+        <div id="row1">
+          <button class="selected">Maanantai</button>
+          <button>Tiistai</button>
+          <button>Keskiviikko</button>
+        </div>
+        <div id="row2">
+          <button>Torstai</button>
+          <button>Perjantai</button>
+          <button>Koko viikko</button>
+        </div>
+      </nav>
+      <h3>Ruokalista</h3>
+      <div id="menu">
+        <div class="menu-item">
+          <p>Päivän keitto</p>
+          <p>6,50€</p>
+          <p>G</p>
+        </div>
+        <div class="menu-item">
+          <p>Päivän keitto</p>
+          <p>6,50€</p>
+          <p>G</p>
+        </div>
+        <div class="menu-item">
+          <p>Päivän keitto</p>
+          <p>6,50€</p>
+          <p>G</p>
+        </div>
+        <div class="menu-item">
+          <p>Päivän keitto</p>
+          <p>6,50€</p>
+          <p>G</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

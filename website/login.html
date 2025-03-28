@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opiskelijaravintolat</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <header>
+      <div id="title">
+        <a href="index.html"
+          ><img
+            src="Logo.png"
+            width="150"
+            alt="Opiskelijaravintolat-sivuston logo"
+        /></a>
+      </div>
+      <nav class="options" id="navbar">
+        <a href="index.html">Etusivu</a>
+        <a href="login.html">Kirjaudu sisään</a>
+        <a href="signup.html">Luo käyttäjä</a>
+      </nav>
+    </header>
+    <main>
+      <h2>Kirjaudu sisään</h2>
+      <form action="login.php" method="post">
+        <label for="username">Käyttäjätunnus</label>
+        <input type="text" name="username" id="username" />
+        <label for="password">Salasana</label>
+        <input type="password" name="password" id="password" />
+        <input type="submit" value="Kirjaudu sisään" id="submit" />
+      </form>
+      <p>Eikö sinulla ole vielä käyttäjätunnusta?</p>
+      <a href="signup.html">Luo käyttäjätunnus</a>
+    </main>
+  </body>
+</html>
