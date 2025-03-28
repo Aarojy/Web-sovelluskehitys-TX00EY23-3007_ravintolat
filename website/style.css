@@ -168,6 +168,10 @@ button {
 }
 
 @media (width >= 800px) {
+  .options {
+    flex-direction: row;
+  }
+
   #navbar {
     justify-content: flex-end;
     align-items: center;
