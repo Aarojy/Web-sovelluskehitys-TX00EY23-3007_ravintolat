@@ -6,7 +6,7 @@
   --textClr: white;
 }
 
-img {
+#logo {
   display: relative;
   margin: 0;
   border-radius: 5%;
