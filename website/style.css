@@ -1,16 +1,18 @@
 :root {
   font-family: cursive;
   --itemBg: #fca76e;
-  --selectedBg: #d46a23;
+  --selectedBg: #dd854a;
   --siteBg: #fde4d4;
   --textClr: #242424;
 }
 
 #logo {
   display: relative;
-  margin: 0;
+  margin-top: 5px;
   border-radius: 5%;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 200px;
+  height: auto;
 }
 
 body {
@@ -27,6 +29,9 @@ header {
   padding: 10px;
   flex-direction: row;
   justify-content: space-between;
+  border: #dd854a 3px solid;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 a {
@@ -52,6 +57,7 @@ input {
   background: var(white);
   border: 2px solid #000;
   border-radius: 4px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .options {
@@ -67,9 +73,10 @@ input {
   flex-direction: row;
   justify-content: space-between;
   padding: 4px;
-  margin: 2px;
+  margin: 5px;
   border-radius: 4px;
   background-color: var(--itemBg);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 #restaurant-info-container {
@@ -87,6 +94,7 @@ input {
   display: flex;
   flex-direction: row;
   align-items: center;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 #weekdays {
@@ -99,9 +107,18 @@ input {
   align-items: flex-end;
 }
 
+#navbar a {
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: var(--selectedBg);
+  border-radius: 5px;
+  margin: 2px;
+  font-size: small;
+}
+
 #map {
   height: 180px;
   margin-top: 10px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 button {
@@ -113,6 +130,7 @@ button {
   cursor: pointer;
   padding: 10px;
   margin: 5px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .selected {
@@ -124,11 +142,6 @@ button {
     flex-direction: row;
   }
 
-  #navbar {
-    justify-content: flex-end;
-    align-items: center;
-  }
-
   #map {
     height: 40vw;
     width: 97vw;
@@ -137,17 +150,24 @@ button {
   }
 }
 
-@media (width >= 500px) {
+@media (width >= 550px) {
   #navbar {
     flex-direction: row;
+    align-items: center;
+  }
+
+  #navbar a {
+    font-size: large;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #logo {
+    width: 100px;
   }
 }
 
 @media (width >= 800px) {
-  .options {
-    flex-direction: row;
-  }
-
   #navbar {
     justify-content: flex-end;
     align-items: center;
