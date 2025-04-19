@@ -89,10 +89,11 @@ const handleMarkerClick = async (name) => {
 
 const addRestaurantMarkers = (restaurants) => {
   restaurants.forEach((restaurant) => {
-    const {location, name} = restaurant;
+    const {location, name, company} = restaurant;
     addMarker(
       location.coordinates[1],
       location.coordinates[0],
+      company,
       name,
       handleMarkerClick
     );
