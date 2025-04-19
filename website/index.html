@@ -44,7 +44,7 @@
       <div id="restaurant-info-container">
         <div id="restaurant-info">
           <p>Valittu ravintola:</p>
-          <p id="restaurant">Metropolia Myllypuro</p>
+          <p id="restaurant">---</p>
         </div>
         <form>
           <input type="text" id="name" name="name" value="Hae ravintolaa" />
@@ -54,39 +54,18 @@
       <h3>Viikonpäivä</h3>
       <nav class="options" id="weekdays">
         <div id="row1">
-          <button class="selected">Maanantai</button>
-          <button>Tiistai</button>
-          <button>Keskiviikko</button>
+          <button class="selected" value="0">Maanantai</button>
+          <button value="1">Tiistai</button>
+          <button value="2">Keskiviikko</button>
         </div>
         <div id="row2">
-          <button>Torstai</button>
-          <button>Perjantai</button>
-          <button>Koko viikko</button>
+          <button value="3">Torstai</button>
+          <button value="4">Perjantai</button>
+          <button value="5">Koko viikko</button>
         </div>
       </nav>
       <h3>Ruokalista</h3>
-      <div id="menu">
-        <div class="menu-item">
-          <p>Päivän keitto</p>
-          <p>6,50€</p>
-          <p>G</p>
-        </div>
-        <div class="menu-item">
-          <p>Päivän keitto</p>
-          <p>6,50€</p>
-          <p>G</p>
-        </div>
-        <div class="menu-item">
-          <p>Päivän keitto</p>
-          <p>6,50€</p>
-          <p>G</p>
-        </div>
-        <div class="menu-item">
-          <p>Päivän keitto</p>
-          <p>6,50€</p>
-          <p>G</p>
-        </div>
-      </div>
+      <div id="menu"></div>
     </main>
   </body>
 </html>
