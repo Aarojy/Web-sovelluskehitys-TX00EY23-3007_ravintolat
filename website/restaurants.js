@@ -3,6 +3,7 @@ import {addMarker} from './leaflet.js';
 
 const apiUrl = 'https://media2.edu.metropolia.fi/restaurant/api/v1';
 let restaurants = [];
+let selectedRestaurant = 'Metropolia Myllypuro';
 
 async function getRestaurants() {
   try {
@@ -12,10 +13,20 @@ async function getRestaurants() {
   }
 }
 
+const handleMarkerClick = (name) => {
+  selectedRestaurant = name;
+  document.getElementById('restaurant').innerText = selectedRestaurant;
+};
+
 const addRestaurantMarkers = (restaurants) => {
   restaurants.forEach((restaurant) => {
     const {location, name} = restaurant;
-    addMarker(location.coordinates[1], location.coordinates[0], name);
+    addMarker(
+      location.coordinates[1],
+      location.coordinates[0],
+      name,
+      handleMarkerClick
+    );
   });
 };
 

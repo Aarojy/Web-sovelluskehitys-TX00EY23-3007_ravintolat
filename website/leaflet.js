@@ -8,11 +8,17 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
-const addMarker = (lat, lon, name) => {
+const addMarker = (lat, lon, name, onClickCallback) => {
   // eslint-disable-next-line no-undef
   const marker = L.marker([lat, lon]).addTo(map);
   marker.bindPopup(name, {autoPan: false});
   marker.openPopup();
+
+  marker.on('click', function () {
+    if (onClickCallback) {
+      onClickCallback(name);
+    }
+  });
 };
 
 export {addMarker};
