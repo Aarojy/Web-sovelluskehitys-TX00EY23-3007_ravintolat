@@ -54,17 +54,20 @@
       <h3>Viikonpäivä</h3>
       <nav class="options" id="weekdays">
         <div id="row1">
-          <button class="selected" value="0">Maanantai</button>
-          <button value="1">Tiistai</button>
-          <button value="2">Keskiviikko</button>
+          <button id="monday" class="selected" value="1">Maanantai</button>
+          <button id="tuesday" value="2">Tiistai</button>
+          <button id="wednesday" value="3">Keskiviikko</button>
         </div>
         <div id="row2">
-          <button value="3">Torstai</button>
-          <button value="4">Perjantai</button>
-          <button value="5">Koko viikko</button>
+          <button id="thursday" value="4">Torstai</button>
+          <button id="friday" value="5">Perjantai</button>
+          <button id="saturday" value="6">Lauantai</button>
+        </div>
+        <div id="row3">
+          <button id="sunday" value="7">Sunnuntai</button>
         </div>
       </nav>
-      <h3>Ruokalista</h3>
+      <h3 id="menuTitle">Ruokalista</h3>
       <div id="menu"></div>
     </main>
   </body>

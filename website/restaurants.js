@@ -5,7 +5,7 @@ import {parseFinnishDate} from './utils/parseDate.js';
 const apiUrl = 'https://media2.edu.metropolia.fi/restaurant/api/v1';
 let restaurants = [];
 let selectedRestaurantID = '';
-let selectedDay = 0;
+let selectedDay = 1;
 let locale = 'fi';
 let selectedRestaurantWeeklyMenu = null;
 
@@ -27,24 +27,41 @@ async function getWeeklyMenu(id, lang) {
 
 const parseWeekday = (weeklyMenu) => {
   let dateTime = null;
+  let changed = false;
 
   weeklyMenu.days.forEach((day) => {
     if (locale === 'fi') {
       dateTime = parseFinnishDate(day.date);
     } else if (locale === 'en') {
-      dateTime = day.date;
+      dateTime = new Date(day.date);
+    }
+
+    if (dateTime.getDay() === selectedDay) {
+      changeMenu(day.courses);
+      document.getElementById('menuTitle').innerHTML =
+        'Ruokalista (' + day.date + ')';
+      changed = true;
     }
   });
+  if (!changed) {
+    const menuElement = document.getElementById('menu');
+    menuElement.innerHTML = '';
+
+    const courseElement = document.createElement('div');
+    courseElement.className = 'menu-item';
+    courseElement.innerHTML = `<p>Ei ruokalistaa tarjolla</p>`;
+
+    menuElement.appendChild(courseElement);
+
+    document.getElementById('menuTitle').innerHTML = 'Ruokalista';
+  }
 };
 
 const changeMenu = (menu) => {
   const menuElement = document.getElementById('menu');
   menuElement.innerHTML = '';
 
-  const daymenu = menu.days[0];
-  const courses = daymenu.courses;
-
-  courses.forEach((course) => {
+  menu.forEach((course) => {
     const courseElement = document.createElement('div');
     courseElement.className = 'menu-item';
     courseElement.innerHTML = `
@@ -61,13 +78,13 @@ const handleMarkerClick = async (name) => {
     (restaurant) => restaurant.name === name
   )._id;
   document.getElementById('restaurant').innerText = name;
+  document.getElementById('menuTitle').innerHTML = 'Ruokalistaa Ladataan...';
 
   selectedRestaurantWeeklyMenu = await getWeeklyMenu(
     selectedRestaurantID,
     locale
   );
   parseWeekday(selectedRestaurantWeeklyMenu);
-  changeMenu(selectedRestaurantWeeklyMenu);
 };
 
 const addRestaurantMarkers = (restaurants) => {
@@ -90,9 +107,16 @@ const createDateButtonHooks = () => {
         btn.classList.remove('selected');
       });
       event.target.classList.add('selected');
+      document.getElementById('menuTitle').innerHTML =
+        'Ruokalistaa Ladataan...';
 
-      selectedDay = event.target.value;
-      console.log(`Selected day: ${selectedDay}`);
+      selectedDay = parseInt(event.target.value);
+
+      selectedRestaurantWeeklyMenu = await getWeeklyMenu(
+        selectedRestaurantID,
+        locale
+      );
+      parseWeekday(selectedRestaurantWeeklyMenu);
     });
   });
 };
