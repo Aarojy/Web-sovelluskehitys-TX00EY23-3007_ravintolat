@@ -28,13 +28,22 @@
     </header>
     <main>
       <form>
-        <input type="text" id="name" name="name" value="Hae ravintolaa" />
-        <button type="submit">Submit</button>
+        <input
+          type="text"
+          id="searchInput"
+          name="searchInput"
+          value="Hae ravintolaa"
+        />
+        <button type="searchBtn">Submit</button>
       </form>
       <select name="company" id="company">
         <option value="Kaikki">Kaikki</option>
         <option value="Sodexo">Sodexo</option>
         <option value="Compass Group">Compass Group</option>
+      </select>
+      <select name="sortBy" id="sortBy">
+        <option value="alphabetical">Aakkosjärjestys</option>
+        <option value="closest">Lähin</option>
       </select>
       <ul id="restaurantList"></ul>
     </main>

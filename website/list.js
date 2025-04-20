@@ -1,25 +1,44 @@
 import {fetchData} from './utils/fetchData.js';
 
 const selector = document.querySelector('#company');
+const form = document.querySelector('form');
+
 const apiUrl = 'https://media2.edu.metropolia.fi/restaurant/api/v1';
 let restaurants = [];
 let filteredRestaurants = [];
 
-selector.addEventListener('change', async (event) => {
-  const selectedCompany = event.target.value;
-  const restaurantList = await getRestaurants(apiUrl);
+const filterRestaurants = () => {
+  const searchInput = document.querySelector('#searchInput').value;
+  const selectedCompany = document.querySelector('#company').value;
+
+  if (searchInput !== 'Hae ravintolaa') {
+    filteredRestaurants = restaurants.filter((restaurant) =>
+      restaurant.name.toLowerCase().includes(searchInput.toLowerCase())
+    );
+  } else {
+    filteredRestaurants = restaurants;
+  }
 
   if (selectedCompany === 'Kaikki') {
     document.querySelector('#restaurantList').innerHTML = '';
-    createList(restaurantList);
+    createList(filteredRestaurants);
     return;
   }
 
-  filteredRestaurants = restaurantList.filter(
+  filteredRestaurants = filteredRestaurants.filter(
     (restaurant) => restaurant.company === selectedCompany
   );
   document.querySelector('#restaurantList').innerHTML = '';
   createList(filteredRestaurants);
+};
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  filterRestaurants();
+});
+
+selector.addEventListener('change', () => {
+  filterRestaurants();
 });
 
 async function getRestaurants(apiUrl) {
