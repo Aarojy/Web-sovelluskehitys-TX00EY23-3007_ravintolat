@@ -29,16 +29,16 @@ const changeLoggedIn = (user) => {
   title.appendChild(userInfo);
 
   const profileButton = document.createElement('a');
-  profileButton.href = '/website/profile.html';
+  profileButton.href = 'profile.html';
   profileButton.innerText = 'Profiili';
   navbar.appendChild(profileButton);
 
   const logoutButton = document.createElement('a');
-  logoutButton.href = '/website/';
+  logoutButton.href = 'index.html';
   logoutButton.innerText = 'Kirjaudu ulos';
   logoutButton.addEventListener('click', () => {
     localStorage.removeItem('authToken');
-    window.location.href = '/website/';
+    window.location.href = 'index.html';
   });
   navbar.appendChild(logoutButton);
 
