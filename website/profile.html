@@ -28,17 +28,16 @@
       </nav>
     </header>
     <main>
-      <h1>Käyttäjäprofiili</h1>
-      <h2 id="username">Käyttäjänimi</h2>
-      <h3 id="favorite">Lempi ravintola:</h3>
-      <img
-        id="profile-picture"
-        src="https://placecats.com/300/200"
-        alt="Käyttäjän profiilikuva"
-      />
+      <div id="main-container">
+        <h2>Käyttäjäprofiili</h2>
+        <h1 id="username">Käyttäjänimi</h1>
+        <h3 id="favorite">Lempiravintola:</h3>
+        <img id="profile-picture" src="" alt="Käyttäjän profiilikuva" />
+      </div>
       <form>
-        <input type="file" id="fileInput" />
-        <input type="submit" value=Vaihda Profiilikuva" id="imgSubmit" />
+        <p>Vaihda profiilikuva:</p>
+        <input type="file" id="fileInput" accept="image/png" />
+        <input type="submit" value="Vaihda Profiilikuva" id="imgSubmit" />
       </form>
     </main>
   </body>
