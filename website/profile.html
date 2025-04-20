@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opiskelijaravintolat</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="login.css" />
     <link rel="icon" type="image/x-icon" href="./resources/favicon.ico" />
-    <script src="login.js" defer></script>
+    <script src="profile.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,16 +25,17 @@
       </nav>
     </header>
     <main>
-      <h2>Kirjaudu sisään</h2>
+      <h1>Käyttäjäprofiili</h1>
+      <h2 id="username">Käyttäjänimi</h2>
+      <img
+        id="profile-picture"
+        src="https://placecats.com/300/200"
+        alt="Käyttäjän profiilikuva"
+      />
       <form>
-        <label for="username">Käyttäjätunnus</label>
-        <input type="text" name="username" id="username" />
-        <label for="password">Salasana</label>
-        <input type="password" name="password" id="password" />
-        <input type="submit" value="Kirjaudu sisään" id="loginSubmit" />
+        <input type="file" id="fileInput" />
+        <input type="submit" value=Vaihda Profiilikuva" id="imgSubmit" />
       </form>
-      <p>Eikö sinulla ole vielä käyttäjätunnusta?</p>
-      <a href="signup.html">Luo käyttäjätunnus</a>
     </main>
   </body>
 </html>

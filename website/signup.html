@@ -6,7 +6,8 @@
     <title>Opiskelijaravintolat</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="login.css" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./resources/favicon.ico" />
+    <script src="register.js" defer></script>
   </head>
   <body>
     <header>
@@ -14,7 +15,7 @@
         <a href="index.html"
           ><img
             id="logo"
-            src="Logo.png"
+            src="./resources/Logo.png"
             alt="Opiskelijaravintolat-sivuston logo"
         /></a>
       </div>
@@ -26,14 +27,14 @@
     </header>
     <main>
       <h2>Luo käyttäjä</h2>
-      <form action="login.php" method="post">
+      <form>
         <label for="username">Käyttäjätunnus</label>
         <input type="text" name="username" id="username" />
         <label for="password">Salasana</label>
         <input type="password" name="password" id="password" />
         <label for="password">Salasana uudestaan</label>
         <input type="password" name="passwordagain" id="passwordagain" />
-        <input type="submit" value="Luo käyttäjä" id="submit" />
+        <input type="submit" value="Luo käyttäjä" id="registerSubmit" />
       </form>
       <p>Onko sinulla jo käyttäjätunnus?</p>
       <a href="login.html">Kirjaudu sisään</a>
