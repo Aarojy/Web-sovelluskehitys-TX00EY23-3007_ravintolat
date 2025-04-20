@@ -1,5 +1,33 @@
 const userToken = localStorage.getItem('authToken');
 
+const changeLoggedIn = (user) => {
+  const navbar = document.getElementById('navbar');
+  const title = document.getElementById('title');
+  const loginButton = document.getElementById('loginBtn');
+  const registerButton = document.getElementById('registerBtn');
+
+  const usernameText = document.createElement('p');
+  usernameText.innerText = user.user.username;
+  title.appendChild(usernameText);
+
+  const profileButton = document.createElement('a');
+  profileButton.href = '/website/profile.html';
+  profileButton.innerText = 'Profiili';
+  navbar.appendChild(profileButton);
+
+  const logoutButton = document.createElement('a');
+  logoutButton.href = '/website/';
+  logoutButton.innerText = 'Kirjaudu ulos';
+  logoutButton.addEventListener('click', () => {
+    localStorage.removeItem('authToken');
+    window.location.href = '/website/';
+  });
+  navbar.appendChild(logoutButton);
+
+  loginButton.style.display = 'none';
+  registerButton.style.display = 'none';
+};
+
 const fetchUserProfile = async () => {
   try {
     const response = await fetch('http://localhost:3000/api/v1/auth/me', {
@@ -20,9 +48,13 @@ const fetchUserProfile = async () => {
   }
 };
 
-if (userToken) {
-  const user = await fetchUserProfile();
-  if (user) {
-    console.log('User profile fetched successfully:', user);
+const main = async () => {
+  if (userToken) {
+    const user = await fetchUserProfile();
+    if (user) {
+      changeLoggedIn(user);
+    }
   }
-}
+};
+
+main();
