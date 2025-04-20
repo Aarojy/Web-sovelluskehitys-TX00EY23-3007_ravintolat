@@ -1,0 +1,19 @@
+.menu-item {
+  display: flex;
+  width: 100%;
+}
+
+.course-name {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.course-price {
+  width: 40%;
+  box-sizing: border-box;
+}
+
+.course-diets {
+  width: 10%;
+  box-sizing: border-box;
+}

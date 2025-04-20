@@ -65,9 +65,9 @@ const changeMenu = (menu) => {
     const courseElement = document.createElement('div');
     courseElement.className = 'menu-item';
     courseElement.innerHTML = `
-      <p>${course.name}<p>
-      <p>Price: ${course.price} €</p>
-      <p>${course.diets}</p>
+      <p class="course-name">${course.name}<p>
+      <p class="course-price">Price: ${course.price} €</p>
+      <p class="course-diets">${course.diets}</p>
     `;
     menuElement.appendChild(courseElement);
   });

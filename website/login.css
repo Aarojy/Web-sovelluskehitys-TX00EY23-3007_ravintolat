@@ -31,7 +31,18 @@ label {
   color: var(--textClr);
 }
 
-#submit {
+#loginSubmit {
+  font-family: cursive;
+  border: none;
+  font-weight: bolder;
+  background-color: var(--selectedBg);
+  color: var(--textClr);
+  margin-top: 10px;
+  padding: 20px;
+}
+
+#registerSubmit {
+  font-family: cursive;
   border: none;
   font-weight: bolder;
   background-color: var(--selectedBg);
