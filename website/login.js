@@ -18,7 +18,7 @@ loginButton.addEventListener('click', async (event) => {
   if (response.ok) {
     const result = await response.json();
     localStorage.setItem('authToken', result.token);
-    window.location.href = '/website';
+    window.location.href = 'index.html';
   } else {
     alert('Login failed. Please check your credentials.');
   }

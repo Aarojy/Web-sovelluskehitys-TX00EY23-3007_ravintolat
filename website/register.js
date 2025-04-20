@@ -38,7 +38,7 @@ registerButton.addEventListener('click', async (event) => {
 
     const loginResult = await loginResponse.json();
     localStorage.setItem('authToken', loginResult.token);
-    window.location.href = '/website';
+    window.location.href = 'index.html';
   } else {
     alert('Registration failed. Please check your credentials.');
   }
