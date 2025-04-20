@@ -30,7 +30,7 @@ const changeLoggedIn = (user) => {
 
 const fetchUserProfile = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/v1/auth/me', {
+    const response = await fetch('https://10.120.32.62/testi/api/v1/auth/me', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${userToken}`,

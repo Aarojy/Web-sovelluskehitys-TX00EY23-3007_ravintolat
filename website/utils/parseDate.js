@@ -22,7 +22,7 @@ export function parseFinnishDate(str) {
   const day = parseInt(match[1], 10);
   const monthName = match[2];
   const month = finnishMonths[monthName];
-  const year = new Date().getFullYear(); // Or specify a year
+  const year = new Date().getFullYear();
 
   if (month === undefined) return null;
 

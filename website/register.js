@@ -13,7 +13,7 @@ registerButton.addEventListener('click', async (event) => {
 
   console.log('Attempting registration...');
 
-  const response = await fetch('http://localhost:3000/api/v1/users', {
+  const response = await fetch('https://10.120.32.62/testi/api/v1/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ registerButton.addEventListener('click', async (event) => {
     console.log('Registration successful:', result);
 
     const loginResponse = await fetch(
-      'http://localhost:3000/api/v1/auth/login',
+      'https://10.120.32.62/testi/api/v1/auth/login',
       {
         method: 'POST',
         headers: {
