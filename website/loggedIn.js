@@ -18,9 +18,14 @@ const changeLoggedIn = (user) => {
   const loginButton = document.getElementById('loginBtn');
   const registerButton = document.getElementById('registerBtn');
 
+  const userInfo = document.createElement('div');
+  const userTitle = document.createElement('p');
+  userTitle.innerText = 'Käyttäjä:';
   const usernameText = document.createElement('p');
   usernameText.innerText = user.user.username;
-  title.appendChild(usernameText);
+  userInfo.appendChild(userTitle);
+  userInfo.appendChild(usernameText);
+  title.appendChild(userInfo);
 
   const profileButton = document.createElement('a');
   profileButton.href = '/website/profile.html';

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opiskelijaravintolat</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="list.css" />
     <link rel="icon" type="image/x-icon" href="./resources/favicon.ico" />
     <script src="loggedIn.js" type="module" defer></script>
     <script src="list.js" type="module" defer></script>
@@ -42,8 +43,10 @@
         <option value="Compass Group">Compass Group</option>
       </select>
       <select name="sortBy" id="sortBy">
+        <option value="random">Satunnainen</option>
         <option value="alphabetical">Aakkosjärjestys</option>
         <option value="closest">Lähin</option>
+        <option value="farthest">Kaukaisin</option>
       </select>
       <ul id="restaurantList"></ul>
     </main>
