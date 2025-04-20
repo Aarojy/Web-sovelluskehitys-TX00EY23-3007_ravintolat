@@ -59,6 +59,35 @@ const fetchUserProfile = async () => {
   }
 };
 
+const updateFavorite = async (user) => {
+  const favoriteList = document.getElementById('favorite');
+
+  try {
+    const response = await fetch(
+      `http://localhost:3000/api/v1/users/favorite/${user.user.username}`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
+      }
+    );
+
+    const data = await response.json();
+    console.log('Favorite data:', data);
+
+    if (data.error) {
+      console.warn('No favorite found:', data.error);
+      favoriteList.innerHTML = 'Lempi ravintola: Ei valittua suosikkia.';
+    } else {
+      // Display the favorite restaurant
+      favoriteList.innerHTML = `Lempi ravintola: ${data}`;
+    }
+  } catch (error) {
+    console.error('Error fetching favorite: ', error);
+  }
+};
+
 const updateProfilePic = (user) => {
   profilePic.src = `http://localhost:3000/uploads/${user.user.username}.png`;
 };
@@ -67,5 +96,6 @@ const main = async () => {
   user = await fetchUserProfile();
   usernameText.innerText = user.user.username;
   updateProfilePic(user);
+  updateFavorite(user);
 };
 main();
