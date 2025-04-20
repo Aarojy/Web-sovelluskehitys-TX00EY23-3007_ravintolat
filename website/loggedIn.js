@@ -19,6 +19,7 @@ const changeLoggedIn = (user) => {
   const registerButton = document.getElementById('registerBtn');
 
   const userInfo = document.createElement('div');
+  userInfo.className = 'user-info';
   const userTitle = document.createElement('p');
   userTitle.innerText = 'Käyttäjä:';
   const usernameText = document.createElement('p');

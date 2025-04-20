@@ -104,11 +104,11 @@ const createList = (restaurants) => {
     restaurantItem.classList.add('restaurant-item');
     restaurantItem.innerHTML = `
       <h3>${restaurant.name}</h2>
-      <p>Kaupunki: ${restaurant.city}</p>
+      <p class="lessNecessary">Kaupunki: ${restaurant.city}</p>
       <p>Osoite: ${restaurant.address}</p>
-      <p>Puhelinnumero: ${restaurant.phone}</p>
-      <p>Firma: ${restaurant.company}</p>
-      <p>Etäisyys: ${
+      <p class="evenLessNecessary">Puhelinnumero: ${restaurant.phone}</p>
+      <p class="leastNecessary">Firma: ${restaurant.company}</p>
+      <p class="leastNecessary">Etäisyys: ${
         restaurant.distance
           ? restaurant.distance / 1000 + ' km'
           : 'Ei saatavilla'

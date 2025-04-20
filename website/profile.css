@@ -44,3 +44,13 @@ img {
   border-width: 3px;
   border-style: solid;
 }
+
+@media (width <= 500px) {
+  #main-container {
+    width: fit-content;
+  }
+  img {
+    width: 250px;
+    height: 250px;
+  }
+}

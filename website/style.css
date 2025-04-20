@@ -163,6 +163,14 @@ button {
   }
 }
 
+@media (width <= 500px) {
+  .user-info p {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
 @media (width >= 550px) {
   #navbar {
     flex-direction: row;
