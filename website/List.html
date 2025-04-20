@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opiskelijaravintolat</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="login.css" />
     <link rel="icon" type="image/x-icon" href="./resources/favicon.ico" />
-    <script src="register.js" defer></script>
     <script src="loggedIn.js" type="module" defer></script>
+    <script src="list.js" type="module" defer></script>
   </head>
   <body>
     <header>
@@ -28,18 +27,16 @@
       </nav>
     </header>
     <main>
-      <h2>Luo käyttäjä</h2>
       <form>
-        <label for="username">Käyttäjätunnus</label>
-        <input type="text" name="username" id="username" />
-        <label for="password">Salasana</label>
-        <input type="password" name="password" id="password" />
-        <label for="password">Salasana uudestaan</label>
-        <input type="password" name="passwordagain" id="passwordagain" />
-        <input type="submit" value="Luo käyttäjä" id="registerSubmit" />
+        <input type="text" id="name" name="name" value="Hae ravintolaa" />
+        <button type="submit">Submit</button>
       </form>
-      <p>Onko sinulla jo käyttäjätunnus?</p>
-      <a href="login.html">Kirjaudu sisään</a>
+      <select name="company" id="company">
+        <option value="Kaikki">Kaikki</option>
+        <option value="Sodexo">Sodexo</option>
+        <option value="Compass Group">Compass Group</option>
+      </select>
+      <ul id="restaurantList"></ul>
     </main>
   </body>
 </html>

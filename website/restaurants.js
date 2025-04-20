@@ -9,7 +9,7 @@ let selectedDay = 1;
 let locale = 'fi';
 let selectedRestaurantWeeklyMenu = null;
 
-async function getRestaurants() {
+export async function getRestaurants(apiUrl) {
   try {
     restaurants = await fetchData(apiUrl + '/restaurants/');
   } catch (error) {
@@ -126,7 +126,7 @@ async function main() {
   createDateButtonHooks();
 
   try {
-    await getRestaurants();
+    await getRestaurants(apiUrl);
   } catch (error) {
     console.error(error.message);
   }

@@ -1,6 +1,18 @@
 const userToken = localStorage.getItem('authToken');
 
 const changeLoggedIn = (user) => {
+  const infoCont = document.getElementById('restaurant-info-container');
+
+  if (infoCont) {
+    const favoriteBtn = document.createElement('button');
+    favoriteBtn.innerText = 'Lisää suosikiksi';
+    infoCont.appendChild(favoriteBtn);
+    favoriteBtn.addEventListener('click', () => {
+      const restaurantName = document.getElementById('restaurant').innerText;
+      postFavorite(restaurantName, user);
+    });
+  }
+
   const navbar = document.getElementById('navbar');
   const title = document.getElementById('title');
   const loginButton = document.getElementById('loginBtn');
@@ -26,6 +38,30 @@ const changeLoggedIn = (user) => {
 
   loginButton.style.display = 'none';
   registerButton.style.display = 'none';
+};
+
+const postFavorite = async (restaurantName, user) => {
+  try {
+    const response = await fetch(
+      `http://localhost:3000/api/v1/users/favorite/${user.user.username}`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({favorite: restaurantName}),
+      }
+    );
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error('Error fetching user profile:', error);
+  }
 };
 
 const fetchUserProfile = async () => {
