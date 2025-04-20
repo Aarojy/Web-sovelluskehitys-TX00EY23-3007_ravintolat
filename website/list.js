@@ -103,7 +103,7 @@ const createList = (restaurants) => {
     const restaurantItem = document.createElement('li');
     restaurantItem.classList.add('restaurant-item');
     restaurantItem.innerHTML = `
-      <h2>${restaurant.name}</h2>
+      <h3>${restaurant.name}</h2>
       <p>Kaupunki: ${restaurant.city}</p>
       <p>Osoite: ${restaurant.address}</p>
       <p>Puhelinnumero: ${restaurant.phone}</p>
